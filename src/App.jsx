@@ -29,8 +29,7 @@ export default function App() {
 
   useEffect(() => {
     const stored = localStorage.getItem('blTheme')
-    const prefersDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
-    document.documentElement.classList.toggle('dark', prefersDark)
+    document.documentElement.classList.toggle('dark', stored === 'dark')
   }, [])
 
   return (

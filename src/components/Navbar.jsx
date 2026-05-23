@@ -19,9 +19,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [dark, setDark] = useState(() => {
     const stored = localStorage.getItem('blTheme')
-    const prefersDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
-    document.documentElement.classList.toggle('dark', prefersDark)
-    return prefersDark
+    const isDark = stored === 'dark'
+    document.documentElement.classList.toggle('dark', isDark)
+    return isDark
   })
   const { pathname } = useLocation()
   const isHome = pathname === '/'
