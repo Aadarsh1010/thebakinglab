@@ -102,11 +102,26 @@
   0%, 100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-12px) scale(1.05); }
 }
-.animate-breadRise { animation: breadRise 1.6s ease-in-out infinite; }
+.animate-breadRise {
+  animation: breadRise 1.6s ease-in-out infinite;
+  will-change: transform;
+}
 
 @keyframes steam {
   0% { opacity: 0; transform: translateY(0) scaleX(1); }
   40% { opacity: 0.8; }
   100% { opacity: 0; transform: translateY(-40px) scaleX(1.4); }
 }
-.steam { animation: steam 2.4s ease-out infinite; }
+.steam {
+  animation: steam 2.4s ease-out infinite;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 768px) {
+  .animate-breadRise {
+    animation-duration: 2.2s;
+  }
+  .steam {
+    animation-duration: 3s;
+  }
+}

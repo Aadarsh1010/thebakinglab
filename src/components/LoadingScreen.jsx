@@ -8,7 +8,11 @@ export default function LoadingScreen() {
       transition={{ duration: 0.4, ease: 'easeInOut' }}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden"
       style={{
-        background: 'radial-gradient(ellipse at center, #3a1d0a 0%, #2C1506 55%, #1c0d03 100%)'
+        background: 'radial-gradient(ellipse at center, #3a1d0a 0%, #2C1506 55%, #1c0d03 100%)',
+        transform: 'translateZ(0)',
+        WebkitTransform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
       }}
       aria-label="Loading The Baking Lab"
     >
@@ -82,6 +86,7 @@ export default function LoadingScreen() {
           animate={{ scale: 1, opacity: 1, rotate: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
+          style={{ willChange: 'transform, opacity' }}
         >
           <div
             className="relative w-[180px] h-[180px] rounded-full overflow-hidden ring-2 ring-[#D4A020]/50 animate-breadRise"
@@ -96,7 +101,8 @@ export default function LoadingScreen() {
             <motion.div
               className="absolute inset-0 pointer-events-none"
               style={{
-                background: 'linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.18) 50%, transparent 65%)'
+                background: 'linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.18) 50%, transparent 65%)',
+                willChange: 'transform'
               }}
               initial={{ x: '-120%' }}
               animate={{ x: '120%' }}
@@ -109,17 +115,19 @@ export default function LoadingScreen() {
             className="absolute -inset-3 rounded-full border border-dashed border-[#D4A020]/45 pointer-events-none"
             animate={{ rotate: 360 }}
             transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
+            style={{ willChange: 'transform' }}
           />
           <motion.div
             aria-hidden="true"
             className="absolute -inset-7 rounded-full border border-[#D4A020]/20 pointer-events-none"
             animate={{ rotate: -360 }}
             transition={{ duration: 32, repeat: Infinity, ease: 'linear' }}
+            style={{ willChange: 'transform' }}
           />
         </motion.div>
       </div>
 
-      <div className="mt-12 flex font-headline text-[#FDF6EC] text-2xl md:text-4xl tracking-[0.32em]">
+      <div className="mt-12 flex font-headline text-[#FDF6EC] text-2xl md:text-4xl tracking-[0.32em]" style={{ willChange: 'transform, opacity' }}>
         {'THE BAKING LAB'.split('').map((ch, i) => (
           <motion.span
             key={i}
@@ -140,6 +148,7 @@ export default function LoadingScreen() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2.8, duration: 1.0, ease: 'easeOut' }}
         className="font-accent text-[#D4A020] text-3xl md:text-4xl mt-3"
+        style={{ willChange: 'transform, opacity' }}
       >
         Fresh &amp; Best
       </motion.p>
@@ -159,11 +168,13 @@ export default function LoadingScreen() {
         </p>
         <div className="h-[3px] w-full rounded-full bg-[#FDF6EC]/10 overflow-hidden">
           <motion.div
-            initial={{ width: '0%' }}
-            animate={{ width: '100%' }}
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
             transition={{ duration: 2.5, ease: 'easeInOut' }}
-            className="h-full rounded-full"
+            className="h-full rounded-full origin-left"
             style={{
+              transformOrigin: 'left',
+              willChange: 'transform',
               background: 'linear-gradient(90deg, rgba(212,160,32,0) 0%, #D4A020 50%, #F2C44A 80%, rgba(212,160,32,0) 100%)',
               boxShadow: '0 0 12px rgba(212,160,32,0.55)'
             }}
