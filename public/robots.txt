@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thebakinglab.com.np/sitemap.xml
