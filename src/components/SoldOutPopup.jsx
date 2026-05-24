@@ -51,7 +51,7 @@ export default function SoldOutPopup() {
               Banana bread & cheesecakes are going fast. Order now to guarantee tomorrow's batch.
             </p>
             <Link
-              to="/pre-order"
+              to="/order-now"
               onClick={dismiss}
               className="block w-full bg-[#D4A020] text-[#2C1506] font-bold py-3 rounded-xl text-sm hover:brightness-110 hover:scale-[1.02] active:scale-100 transition-all"
             >

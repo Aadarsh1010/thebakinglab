@@ -7,7 +7,7 @@ const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/menu', label: 'Menu' },
   { to: '/custom-cake', label: 'Custom Cake' },
-  { to: '/pre-order', label: 'Order Now' },
+  { to: '/order-now', label: 'Order Now' },
   { to: '/gallery', label: 'Gallery' },
   { to: '/about', label: 'About' },
   { to: '/blog', label: 'Blog' },
@@ -158,7 +158,7 @@ export default function Navbar() {
               </button>
 
               <Link
-                to="/pre-order"
+                to="/order-now"
                 className="relative w-9 h-9 flex items-center justify-center transition-all duration-200 hover:opacity-70"
                 aria-label="View cart"
               >
@@ -175,7 +175,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                to="/pre-order"
+                to="/order-now"
                 className="bg-[#D4A020] text-[#2C1506] font-bold px-6 py-2.5 rounded-full text-sm hover:brightness-110 hover:scale-105 active:scale-100 transition-all duration-200"
               >
                   Order Now
@@ -184,7 +184,7 @@ export default function Navbar() {
 
             <div className="lg:hidden flex items-center gap-2">
               <Link
-                to="/pre-order"
+                to="/order-now"
                 className="relative w-9 h-9 flex items-center justify-center"
                 aria-label="View cart"
               >
@@ -299,7 +299,7 @@ export default function Navbar() {
                   )}
                 </button>
                 <Link
-                  to="/pre-order"
+                  to="/order-now"
                   onClick={() => setIsOpen(false)}
                   className="block w-full text-center bg-[#D4A020] text-[#2C1506] font-bold py-3 rounded-full text-sm"
                 >

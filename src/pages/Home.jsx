@@ -81,7 +81,7 @@ function HeroSection() {
             Explore Our Menu
           </Link>
           <Link
-            to="/pre-order"
+            to="/order-now"
             className="bg-[#D4A020] text-[#2C1506] dark:text-[#FDF6EC] font-bold px-8 py-3.5 rounded-full text-base hover:brightness-110 hover:scale-105 active:scale-100 transition-all duration-200 animate-pulse"
           >
             Order Now for Tomorrow
@@ -332,7 +332,7 @@ function FamousForSection() {
                 <h3 className="font-headline text-lg text-[#2C1506] dark:text-[#FDF6EC] mb-2">{item.title}</h3>
                 <p className="text-sm text-[#2C1506]/70 dark:text-[#FDF6EC]/70 leading-relaxed mb-4">{item.desc}</p>
                 <Link
-                  to={item.linkTo || `/pre-order${item.preOrderItem ? `?add=${encodeURIComponent(item.preOrderItem)}` : ''}`}
+                  to={item.linkTo || `/order-now${item.preOrderItem ? `?add=${encodeURIComponent(item.preOrderItem)}` : ''}`}
                   className="inline-block text-sm font-semibold text-[#D4A020] hover:text-[#2C1506] dark:hover:text-[#FDF6EC] transition-colors"
                 >
                   Order Now →
@@ -386,7 +386,7 @@ function TouristUrgency() {
             Chowk. 5 minutes from Thamel main.
           </p>
           <Link
-            to="/pre-order"
+            to="/order-now"
             className="inline-flex items-center gap-2 bg-[#D4A020] text-[#2C1506] dark:text-[#FDF6EC] font-bold px-8 py-3.5 rounded-full text-base hover:brightness-110 hover:scale-105 active:scale-100 transition-all duration-200 w-fit"
           >
             Reserve for Tomorrow →

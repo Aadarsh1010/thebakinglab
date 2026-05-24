@@ -13,7 +13,7 @@ import { CartProvider } from './context/CartContext'
 import Home from './pages/Home'
 import Menu from './pages/Menu'
 import CustomCake from './pages/CustomCake'
-import PreOrder from './pages/PreOrder'
+import OrderNow from './pages/OrderNow'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import About from './pages/About'
@@ -43,7 +43,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/custom-cake" element={<CustomCake />} />
-              <Route path="/pre-order" element={<PreOrder />} />
+              <Route path="/order-now" element={<OrderNow />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />

@@ -4,13 +4,13 @@ import { motion } from 'framer-motion'
 export default function MobileStickyBar() {
   const navigate = useNavigate()
   const { pathname } = useLocation()
-  if (pathname === '/pre-order') return null
+  if (pathname === '/order-now') return null
 
   const handleClick = () => {
-    if (pathname === '/pre-order') {
+    if (pathname === '/order-now') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
-      navigate('/pre-order')
+      navigate('/order-now')
     }
   }
 

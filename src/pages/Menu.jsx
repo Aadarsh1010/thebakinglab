@@ -323,7 +323,7 @@ export default function Menu() {
               </p>
             </div>
             <Link
-              to="/pre-order"
+              to="/order-now"
               className="shrink-0 bg-[#D4A020] text-[#2C1506] dark:text-[#FDF6EC] font-bold px-6 py-3 rounded-full text-sm hover:brightness-110 hover:scale-105 active:scale-100 transition-all duration-200"
             >
               Order Now →
@@ -436,7 +436,7 @@ export default function Menu() {
                           {item.price}
                         </span>
                         <Link
-                          to={`/pre-order?add=${encodeURIComponent(item.name)}`}
+                          to={`/order-now?add=${encodeURIComponent(item.name)}`}
                           className="bg-[#D4A020] text-[#2C1506] dark:text-[#FDF6EC] font-semibold text-xs px-4 py-2 rounded-full hover:brightness-110 hover:scale-105 active:scale-100 transition-all duration-200 flex items-center gap-1"
                         >
                           <span>Order Now</span>
@@ -483,7 +483,7 @@ export default function Menu() {
             Order by 8PM for guaranteed next-morning pickup
           </p>
           <Link
-            to="/pre-order"
+            to="/order-now"
             className="inline-flex bg-[#D4A020] text-[#2C1506] dark:text-[#FDF6EC] font-bold px-8 py-3.5 rounded-full text-base hover:brightness-110 hover:scale-105 active:scale-100 transition-all duration-200"
           >
             Order Now

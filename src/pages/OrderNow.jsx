@@ -55,7 +55,7 @@ function formatPrice(n) {
   return 'NPR ' + n.toLocaleString('en-IN')
 }
 
-export default function PreOrder() {
+export default function OrderNow() {
   const { quantities, inc, dec, clearCart } = useCart()
   const [activeTab, setActiveTab] = useState('All')
   const [name, setName] = useState('')
