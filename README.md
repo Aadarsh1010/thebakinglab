@@ -69,3 +69,4 @@ The site is configured for Netlify deployment:
 - Warm Cream: `#FDF6EC`
 - Soft Ivory: `#FAF0E0`
 - White: `#FFFFFF`
+# Thebakinglab
