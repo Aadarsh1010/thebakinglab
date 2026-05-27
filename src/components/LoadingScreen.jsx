@@ -150,7 +150,7 @@ export default function LoadingScreen() {
         className="font-accent text-[#D4A020] text-3xl md:text-4xl mt-3"
         style={{ willChange: 'transform, opacity' }}
       >
-        Fresh &amp; Best
+        Fresh & Best
       </motion.p>
 
       <motion.div

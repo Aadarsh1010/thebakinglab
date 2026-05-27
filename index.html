@@ -5,24 +5,24 @@
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <!-- Primary Meta Tags -->
-    <title>The Baking Lab | Best Banana Bread & Custom Cakes in Thamel, Kathmandu</title>
-    <meta name="title" content="The Baking Lab | Best Banana Bread & Custom Cakes in Thamel, Kathmandu" />
-    <meta name="description" content="Nepal's best banana bread, premium cheesecakes with caramelized cashews, custom celebration cakes in Kaldhara, Thamel. Pre-order online. Eggless options. 4.7★ Google." />
+    <!-- Primary Meta Tags (fallback — per-page tags set via react-helmet-async) -->
+    <title>The Baking Lab | Best Banana Bread & Bakery in Thamel, Kathmandu</title>
+    <meta name="title" content="The Baking Lab | Best Banana Bread & Bakery in Thamel, Kathmandu" />
+    <meta name="description" content="Nepal's best banana bread, artisan cakes & baked goods in Kaldhara, Thamel. Freshly baked daily. Eggless & custom options. Visit Kathmandu's favorite hidden bakery." />
     <link rel="canonical" href="https://thebakinglab.com.np/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://thebakinglab.com.np/" />
-    <meta property="og:title" content="The Baking Lab | Best Banana Bread & Custom Cakes in Thamel, Kathmandu" />
-    <meta property="og:description" content="Nepal's best banana bread, premium cheesecakes with caramelized cashews, custom celebration cakes in Kaldhara, Thamel. Pre-order online. Eggless options. 4.7★ Google." />
+    <meta property="og:title" content="The Baking Lab | Best Banana Bread & Bakery in Thamel, Kathmandu" />
+    <meta property="og:description" content="Nepal's best banana bread, artisan cakes & baked goods in Kaldhara, Thamel. Freshly baked daily. Eggless & custom options." />
     <meta property="og:image" content="/logo.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://thebakinglab.com.np/" />
-    <meta property="twitter:title" content="The Baking Lab | Best Banana Bread & Custom Cakes in Thamel, Kathmandu" />
-    <meta property="twitter:description" content="Nepal's best banana bread, premium cheesecakes with caramelized cashews, custom celebration cakes in Kaldhara, Thamel. Pre-order online. Eggless options. 4.7★ Google." />
+    <meta property="twitter:title" content="The Baking Lab | Best Banana Bread & Bakery in Thamel, Kathmandu" />
+    <meta property="twitter:description" content="Nepal's best banana bread, artisan cakes & baked goods in Kaldhara, Thamel. Freshly baked daily. Eggless & custom options." />
     <meta property="twitter:image" content="/logo.png" />
 
     <!-- JSON-LD LocalBusiness Schema -->
@@ -30,38 +30,68 @@
     {
       "@context": "https://schema.org",
       "@type": "Bakery",
+      "@id": "https://thebakinglab.com.np",
       "name": "The Baking Lab",
-      "description": "Artisan bakery in Thamel famous for Nepal's best banana bread",
-      "image": "/logo.png",
+      "description": "Artisan bakery in Kaldhara, Thamel famous for Nepal's best banana bread, premium cheesecakes, and custom celebration cakes. Eggless options available daily.",
+      "url": "https://thebakinglab.com.np",
+      "image": "https://thebakinglab.com.np/logo.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Kaldhara Chowk",
-        "addressLocality": "Thamel, Kathmandu",
+        "addressLocality": "Thamel",
+        "addressRegion": "Kathmandu",
         "postalCode": "44600",
         "addressCountry": "NP"
       },
-      "telephone": "+977-984-5126192",
-      "openingHours": [
-        "Mo-Sa 07:00-19:00",
-        "Su 08:00-17:00"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 27.7172,
+        "longitude": 85.3095
+      },
+      "telephone": [
+        "+977-984-5126192",
+        "+977-984-1101667"
+      ],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "19:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "17:00" }
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.7",
-        "reviewCount": "100"
+        "reviewCount": "100",
+        "bestRating": "5"
       },
       "servesCuisine": "Bakery",
       "priceRange": "NPR 130-8000",
+      "areaServed": [
+        { "@type": "City", "name": "Kathmandu" },
+        { "@type": "City", "name": "Thamel" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Bakery Items",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Banana Bread" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Caramelized Cashew Cheesecake" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Custom Celebration Cakes" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Eggless Cakes" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Brownies" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Croissants" } }
+        ]
+      },
       "sameAs": [
         "https://www.facebook.com/ThebakinglabNP",
-        "https://www.instagram.com/bakinglabaadhunik"
+        "https://www.instagram.com/bakinglabaadhunik",
+        "https://www.tiktok.com/@the.baking.lab"
       ]
     }
     </script>
 
-    <!-- Fonts -->
+    <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
   </head>
   <body>

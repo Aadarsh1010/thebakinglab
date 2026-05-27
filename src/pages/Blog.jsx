@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const fadeUp = {
@@ -118,6 +119,13 @@ export default function Blog() {
 
   return (
     <div>
+      <Helmet>
+        <title>Blog | The Baking Lab — Baking Stories & Tips from Kathmandu</title>
+        <meta name="description" content="Read about the stories, recipes, and baking tips from The Baking Lab in Thamel, Kathmandu. Banana bread secrets, eggless baking guides, custom cake ideas & more." />
+        <link rel="canonical" href="https://thebakinglab.com.np/blog" />
+        <meta property="og:title" content="Blog | The Baking Lab — Baking Stories & Tips from Kathmandu" />
+        <meta property="og:description" content="Baking stories, tips & recipes from The Baking Lab in Thamel, Kathmandu. Banana bread secrets, eggless baking & custom cake ideas." />
+      </Helmet>
       {/* Hero */}
       <section
         className="relative min-h-[50vh] md:min-h-[55vh] flex items-center justify-center overflow-hidden"

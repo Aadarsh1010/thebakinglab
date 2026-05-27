@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { motion, useInView, animate, AnimatePresence } from 'framer-motion'
 
 const fadeUp = {
@@ -46,16 +47,12 @@ function HeroSection() {
           className="font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#FDF6EC] font-bold leading-tight"
         >
           Kathmandu's
+          <span
+            className="block font-accent text-4xl sm:text-5xl text-[#D4A020] mt-2 mb-8"
+          >
+            Best Kept Secret
+          </span>
         </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.7 }}
-          className="font-accent text-4xl sm:text-5xl text-[#D4A020] mt-2 mb-8"
-        >
-          Best Kept Secret
-        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -236,7 +233,7 @@ function BrandStorySection() {
           >
             <img
               src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800"
-              alt="The Baking Lab team"
+              alt="The Baking Lab bakery team in Kaldhara, Thamel, Kathmandu"
               loading="lazy"
               className="rounded-2xl shadow-xl w-full h-[450px] object-cover"
             />
@@ -360,7 +357,7 @@ function TouristUrgency() {
         >
           <img
             src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800"
-            alt="Fresh banana bread"
+            alt="Freshly baked banana bread at The Baking Lab in Thamel, Kathmandu"
             loading="lazy"
             className="w-full h-full object-cover"
           />
@@ -460,7 +457,7 @@ function CustomCakeTeaser() {
         >
           <img
             src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800"
-            alt="Custom celebration cake"
+            alt="Custom celebration cake from The Baking Lab, Kathmandu — eggless options available"
             loading="lazy"
             className="w-full h-full object-cover"
           />
@@ -697,6 +694,15 @@ function NewsletterSection() {
 export default function Home() {
   return (
     <div>
+      <Helmet>
+        <title>The Baking Lab | Best Banana Bread & Bakery in Thamel, Kathmandu</title>
+        <meta name="description" content="Nepal's best banana bread, artisan cakes & baked goods in Kaldhara, Thamel. Freshly baked daily. Eggless & custom options. Visit Kathmandu's favorite hidden bakery." />
+        <link rel="canonical" href="https://thebakinglab.com.np/" />
+        <meta property="og:title" content="The Baking Lab | Best Banana Bread & Bakery in Thamel, Kathmandu" />
+        <meta property="og:description" content="Nepal's best banana bread, artisan cakes & baked goods in Kaldhara, Thamel. Freshly baked daily. Eggless & custom options." />
+        <meta property="twitter:title" content="The Baking Lab | Best Banana Bread & Bakery in Thamel, Kathmandu" />
+        <meta property="twitter:description" content="Nepal's best banana bread, artisan cakes & baked goods in Kaldhara, Thamel. Freshly baked daily. Eggless & custom options." />
+      </Helmet>
       <HeroSection />
       <AwardsTicker />
       <DeliveryPromosBanner />

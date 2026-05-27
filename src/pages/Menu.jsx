@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const tabs = [
@@ -270,6 +271,13 @@ export default function Menu() {
 
   return (
     <div className="bg-[#FAF0E0] dark:bg-[#1C0F0A]">
+      <Helmet>
+        <title>Menu | The Baking Lab — Best Banana Bread & Bakery in Thamel, Kathmandu</title>
+        <meta name="description" content="Explore our full menu of fresh banana bread, caramelized cashew cheesecake, brownies, croissants & custom cakes at The Baking Lab in Kaldhara, Thamel, Kathmandu. Eggless options available daily." />
+        <link rel="canonical" href="https://thebakinglab.com.np/menu" />
+        <meta property="og:title" content="Menu | The Baking Lab — Best Banana Bread & Bakery in Thamel" />
+        <meta property="og:description" content="Explore our full menu of fresh banana bread, cheesecakes, brownies & custom cakes at The Baking Lab in Kaldhara, Thamel." />
+      </Helmet>
       {/* Page Hero */}
       <section
         className="relative pt-28 pb-20 md:pb-28 flex items-center"

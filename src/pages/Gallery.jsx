@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const fadeUp = {
@@ -53,6 +54,13 @@ export default function Gallery() {
 
   return (
     <div className="bg-[#FAF0E0] dark:bg-[#1C0F0A] min-h-screen">
+      <Helmet>
+        <title>Gallery | The Baking Lab — Banana Bread & Cakes in Thamel, Kathmandu</title>
+        <meta name="description" content="Browse photos of artisan bakes, custom cakes, banana bread, cheesecakes and bakery life at The Baking Lab in Kaldhara, Thamel, Kathmandu." />
+        <link rel="canonical" href="https://thebakinglab.com.np/gallery" />
+        <meta property="og:title" content="Gallery | The Baking Lab — Banana Bread & Cakes in Thamel" />
+        <meta property="og:description" content="Browse photos of artisan bakes, custom cakes & banana bread at The Baking Lab in Kaldhara, Thamel, Kathmandu." />
+      </Helmet>
       {/* Hero */}
       <section
         className="relative pt-28 pb-20 md:pb-28 flex items-center"

@@ -1,5 +1,6 @@
 import { useState, useRef, useMemo, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const steps = ['Occasion', 'Details', 'Personalize', 'Delivery', 'Confirm']
@@ -158,7 +159,7 @@ export default function CustomCake() {
   const isStepValid = useCallback(() => {
     switch (step) {
       case 1: return !!form.occasion
-      case 2: return !!form.flavor && !!form.weight
+      case 2: return !!form.flavor && (form.weight === 'custom' ? !!form.customWeight : !!form.weight)
       case 3: return true
       case 4: return !!form.date && !!form.time && (form.deliveryType !== 'delivery' || !!form.address)
       case 5: return !!form.name && !!form.phone
@@ -198,17 +199,22 @@ export default function CustomCake() {
       lines.push('━━━━━━━━━━━━━━━')
       lines.push('⚠️ I will send the reference image manually in this chat.')
     }
-    return lines.join('%0A')
+    return lines.join('\n')
   }
 
   const handleSubmit = () => {
-    window.open(`https://wa.me/9779845126192?text=${buildWhatsAppMessage()}`, '_blank')
+    window.open(`https://wa.me/9779845126192?text=${encodeURIComponent(buildWhatsAppMessage())}`, '_blank')
     setShowSuccess(true)
   }
 
   const handleImageUpload = (e) => {
     const file = e.target.files?.[0]
     if (!file) return
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp']
+    if (!allowedTypes.includes(file.type)) {
+      alert('Only JPEG and PNG images are allowed')
+      return
+    }
     if (file.size > 5 * 1024 * 1024) {
       alert('Image must be under 5MB')
       return
@@ -222,6 +228,11 @@ export default function CustomCake() {
   if (showSuccess) {
     return (
       <div className="min-h-screen bg-[#2C1506] flex items-center justify-center relative overflow-hidden">
+        <Helmet>
+          <title>Order Confirmed | Custom Cakes — The Baking Lab, Kathmandu</title>
+          <meta name="description" content="Your custom cake order has been received! The Baking Lab will confirm via WhatsApp within 1 hour. Eggless & themed cakes in Kathmandu." />
+          <meta name="robots" content="noindex" />
+        </Helmet>
         <Confetti />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -276,6 +287,13 @@ export default function CustomCake() {
 
   return (
     <div className="min-h-screen bg-[#FAF0E0] dark:bg-[#1C0F0A]">
+      <Helmet>
+        <title>Custom Cakes Kathmandu | The Baking Lab — Order Online</title>
+        <meta name="description" content="Order custom celebration cakes in Kathmandu from The Baking Lab. Eggless, themed, and personalized cakes for birthdays, weddings & events. Premium ingredients. Order online for pickup or delivery in Thamel." />
+        <link rel="canonical" href="https://thebakinglab.com.np/custom-cake" />
+        <meta property="og:title" content="Custom Cakes Kathmandu | The Baking Lab" />
+        <meta property="og:description" content="Order custom celebration cakes in Kathmandu. Eggless, themed & personalized. Premium ingredients. Pickup or delivery in Thamel." />
+      </Helmet>
       {/* Header */}
       <section className="pt-24 pb-8 md:pb-12 bg-[#2C1506]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -355,7 +373,7 @@ export default function CustomCake() {
                         <h2 className="font-headline text-2xl md:text-3xl text-[#2C1506] dark:text-[#FDF6EC]">What's the celebration?</h2>
                         <p className="text-[#2C1506]/50 dark:text-[#FDF6EC]/50 text-sm mt-1">Choose the occasion for your custom cake</p>
                       </div>
-                      <span className="hidden sm:inline text-xs font-semibold text-[#c9a84c] bg-[#c9a84c]/10 px-3.5 py-1.5 rounded-full whitespace-nowrap">Step 1 of 4</span>
+                      <span className="hidden sm:inline text-xs font-semibold text-[#c9a84c] bg-[#c9a84c]/10 px-3.5 py-1.5 rounded-full whitespace-nowrap">Step 1 of 5</span>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                       {occasions.map((o) => {
@@ -397,7 +415,7 @@ export default function CustomCake() {
                         <h2 className="font-headline text-2xl md:text-3xl text-[#2C1506] dark:text-[#FDF6EC]">Choose Your Flavor</h2>
                         <p className="text-[#2C1506]/50 dark:text-[#FDF6EC]/50 text-sm mt-1">Pick the perfect taste for your cake</p>
                       </div>
-                      <span className="hidden sm:inline text-xs font-semibold text-[#c9a84c] bg-[#c9a84c]/10 px-3.5 py-1.5 rounded-full whitespace-nowrap">Step 2 of 4</span>
+                      <span className="hidden sm:inline text-xs font-semibold text-[#c9a84c] bg-[#c9a84c]/10 px-3.5 py-1.5 rounded-full whitespace-nowrap">Step 2 of 5</span>
                     </div>
                     <div>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -550,7 +568,7 @@ export default function CustomCake() {
                         <h2 className="font-headline text-2xl md:text-3xl text-[#2C1506] dark:text-[#FDF6EC]">Personalize Your Cake</h2>
                         <p className="text-[#2C1506]/50 dark:text-[#FDF6EC]/50 text-sm mt-1">Make it truly yours</p>
                       </div>
-                      <span className="hidden sm:inline text-xs font-semibold text-[#c9a84c] bg-[#c9a84c]/10 px-3.5 py-1.5 rounded-full whitespace-nowrap">Step 3 of 4</span>
+                      <span className="hidden sm:inline text-xs font-semibold text-[#c9a84c] bg-[#c9a84c]/10 px-3.5 py-1.5 rounded-full whitespace-nowrap">Step 3 of 5</span>
                     </div>
 
                     <div>
@@ -642,7 +660,7 @@ export default function CustomCake() {
                       >
                         {form.refImagePreview ? (
                           <div className="relative inline-block">
-                            <img src={form.refImagePreview} alt="Reference" className="h-32 rounded-[12px] object-cover shadow-md" />
+                            <img src={form.refImagePreview} alt="Reference image for custom cake order at The Baking Lab, Kathmandu" className="h-32 rounded-[12px] object-cover shadow-md" />
                             <button
                               onClick={(e) => { e.stopPropagation(); update('refImage', null); update('refImagePreview', null) }}
                               className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-xs shadow-md hover:bg-red-600 transition-colors"
@@ -683,7 +701,7 @@ export default function CustomCake() {
                         <h2 className="font-headline text-2xl md:text-3xl text-[#2C1506] dark:text-[#FDF6EC]">Delivery Details</h2>
                         <p className="text-[#2C1506]/50 dark:text-[#FDF6EC]/50 text-sm mt-1">When and where should we deliver?</p>
                       </div>
-                      <span className="hidden sm:inline text-xs font-semibold text-[#c9a84c] bg-[#c9a84c]/10 px-3.5 py-1.5 rounded-full whitespace-nowrap">Step 4 of 4</span>
+                      <span className="hidden sm:inline text-xs font-semibold text-[#c9a84c] bg-[#c9a84c]/10 px-3.5 py-1.5 rounded-full whitespace-nowrap">Step 4 of 5</span>
                     </div>
 
                     <div>

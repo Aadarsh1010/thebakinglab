@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { motion, useInView, animate } from 'framer-motion'
 
 const fadeUp = {
@@ -253,6 +254,13 @@ function ValueCard({ value, index }) {
 export default function About() {
   return (
     <div>
+      <Helmet>
+        <title>About | The Baking Lab — Artisan Bakery in Kaldhara, Thamel, Kathmandu</title>
+        <meta name="description" content="Discover the story behind The Baking Lab, Kathmandu's artisan bakery in Kaldhara, Thamel. Fresh, quality bakes made daily since 2023. Eggless options, custom cakes & more." />
+        <link rel="canonical" href="https://thebakinglab.com.np/about" />
+        <meta property="og:title" content="About | The Baking Lab — Artisan Bakery in Thamel" />
+        <meta property="og:description" content="Discover the story behind The Baking Lab, Kathmandu's artisan bakery in Kaldhara, Thamel. Fresh bakes since 2023." />
+      </Helmet>
       {/* Hero */}
       <section
         className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden"
@@ -304,13 +312,13 @@ export default function About() {
               <div className="relative grid grid-cols-2 gap-4">
                 <img
                   src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600"
-                  alt="Freshly baked bread"
+                  alt="Freshly baked banana bread at The Baking Lab, best bakery in Thamel, Kathmandu"
                   loading="lazy"
                   className="rounded-2xl h-56 sm:h-72 w-full object-cover shadow-[0_10px_30px_-10px_rgba(44,21,6,0.35)]"
                 />
                 <img
                   src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=600"
-                  alt="Baking process"
+                  alt="Artisan baking process at The Baking Lab in Thamel, Kathmandu"
                   loading="lazy"
                   className="rounded-2xl h-56 sm:h-72 w-full object-cover shadow-[0_10px_30px_-10px_rgba(44,21,6,0.35)] mt-8"
                 />

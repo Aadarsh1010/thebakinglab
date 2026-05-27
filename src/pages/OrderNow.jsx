@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { useCart } from '../context/CartContext'
 import FloatingCart from '../components/FloatingCart'
@@ -103,6 +104,13 @@ export default function OrderNow() {
 
   return (
     <div className="bg-[#FAF0E0] dark:bg-[#1C0F0A] min-h-screen">
+      <Helmet>
+        <title>Order Online | The Baking Lab — Bakery Delivery in Thamel, Kathmandu</title>
+        <meta name="description" content="Pre-order banana bread, cheesecakes, brownies & more from The Baking Lab in Thamel, Kathmandu. Free delivery on orders over NPR 2,000. Reserve by 8PM for next-day pickup." />
+        <link rel="canonical" href="https://thebakinglab.com.np/order-now" />
+        <meta property="og:title" content="Order Online | The Baking Lab — Bakery Delivery Thamel" />
+        <meta property="og:description" content="Pre-order banana bread, cheesecakes & more from The Baking Lab in Thamel. Free delivery on orders over NPR 2,000." />
+      </Helmet>
       {/* Hero */}
       <section
         className="relative pt-28 pb-20 md:pb-28 flex items-center"
@@ -337,6 +345,8 @@ function ProductCard({ item, qty, onInc, onDec }) {
           <img
             src={item.img}
             alt={item.name}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </div>
