@@ -53,9 +53,7 @@ const timeSlots = [
 const CONF_COLORS = ['#D4A020', '#2C1506', '#FDF6EC', '#7B4A1E', '#FAF0E0', '#3D1F0D']
 
 function getMinDate() {
-  const d = new Date()
-  d.setDate(d.getDate() + 2)
-  return d.toISOString().split('T')[0]
+  return new Date().toISOString().split('T')[0]
 }
 
 function formatPrice(n) {
@@ -713,7 +711,7 @@ export default function CustomCake() {
                         min={getMinDate()}
                         className="w-full px-4 py-3 rounded-[16px] border-2 border-[#2C1506]/10 dark:border-[#FDF6EC]/10 focus:border-[#c9a84c] outline-none bg-[#FAF7F2]/50 dark:bg-[#3D1F0D]/30 transition-all duration-200"
                       />
-                      <p className="text-xs text-[#2C1506]/50 dark:text-[#FDF6EC]/50 mt-1.5">We need at least 2 days to craft your cake</p>
+                      <p className="text-xs text-[#2C1506]/50 dark:text-[#FDF6EC]/50 mt-1.5">Select your preferred pickup date</p>
                     </div>
 
                     <div>

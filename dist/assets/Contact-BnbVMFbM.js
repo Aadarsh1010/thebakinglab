@@ -1,4 +1,4 @@
-import{r as d,l as e,a as h,p as s,A as p}from"./index-CX3iaHak.js";const l={initial:{opacity:0,y:40},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-80px"},transition:{duration:.6}},u=["Order Enquiry","Custom Cake Order","General Question","Collaboration","Other"];function g(){const[t,o]=d.useState({name:"",phone:"",email:"",subject:"Order Enquiry",message:""}),[c,i]=d.useState(!1),r=(a,n)=>o(m=>({...m,[a]:n})),x=a=>{a.preventDefault();const n=`Hello The Baking Lab!
+import{r as d,l as e,a as h,p as s,A as p}from"./index-BfjdAk_n.js";const l={initial:{opacity:0,y:40},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-80px"},transition:{duration:.6}},u=["Order Enquiry","Custom Cake Order","General Question","Collaboration","Other"];function g(){const[t,o]=d.useState({name:"",phone:"",email:"",subject:"Order Enquiry",message:""}),[c,i]=d.useState(!1),r=(a,n)=>o(m=>({...m,[a]:n})),x=a=>{a.preventDefault();const n=`Hello The Baking Lab!
 
 ** Subject:** ${t.subject}
 ** Name:** ${t.name}
